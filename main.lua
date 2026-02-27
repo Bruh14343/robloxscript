@@ -4,7 +4,12 @@
 -- ✅ Rayfield GUI - Buttons/Toggles/Sliders ALL WORK PERFECTLY in loadstring
 -- Update your GitHub/Main with this FULL code → Commit → Use your loadstring!
 
-if game.PlaceId ~= 3351674303 then return end
+local allowedPlaces = {
+    [3351674303] = true, -- main Driving Empire map
+    -- add more place IDs here later if needed
+}
+
+if not allowedPlaces[game.PlaceId] then return end
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
